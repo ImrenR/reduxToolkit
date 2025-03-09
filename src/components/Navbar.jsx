@@ -1,33 +1,34 @@
 import React from "react";
-import { AppBar, Box, Toolbar, Typography } from "@mui/material";
-import { Button } from "bootstrap";
-import { useSelector } from "react-redux";
-import { useDispatch } from "react-redux";
+import { AppBar, Box, Button, Toolbar, Typography } from "@mui/material";
+import { useSelector, useDispatch } from "react-redux";
 import { deleteUser } from "../features/orderSlice";
 import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   
-  const { email } = useSelector((state) => state.orderSlice);
-  const navigate= useNavigate()
+  const { email } = useSelector((state) => state.orderSlice)
+
   const dispatch = useDispatch()
+  const navigate= useNavigate()
+ 
   
-  const handleLogout =(e)=> {
+  const handleLogout =()=> {
        dispatch(deleteUser())
 
        navigate("/login")
   }
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color="secondary">
+      <AppBar position="static" sx={{backgroundColor: "lightblue"}}>
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Global News
           </Typography>
           {email ? (
             <Button onClick={handleLogout} color="inherit">Logout</Button>
           ) : (
-            <Button color="inherit">Signup</Button>
+            <Button  sx={{color:"white", backgroundColor: "lightblue"}}>Signup</Button>
           )}
         </Toolbar>
       </AppBar>
@@ -35,4 +36,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar

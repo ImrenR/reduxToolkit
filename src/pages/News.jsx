@@ -1,10 +1,10 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import loadingigf from "../assets/loading.gif";
-import {Box, Card, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
+import {Box, Card, Button, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
 import { useEffect } from "react";
 import { getirData } from "../features/newsSlice";
-import { useSelector } from "react-redux";
-import { Button } from "bootstrap";
+
+
 
 
 const News = () => {

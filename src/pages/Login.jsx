@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = (e)=> {
     e.preventDefault()
 
-    dispatch(createUser(email,password))
+    dispatch(createUser({email,password}))
 
     navigate("/")
   }
@@ -77,11 +77,11 @@ const Login = () => {
 
       <Typography variant="body2" color="text.secondary" align="center">
         {"Copyright © "}
-        <Link color="inherit" href="">
-          Clarusway
+        <Link color="inherit" href="https://www.linkedin.com/in/imrenr/">
+          Link
         </Link>{" "}
-        {}
-        {}
+        {new Date().getFullYear()}
+        {"."}
       </Typography>
     </Container>
   );
