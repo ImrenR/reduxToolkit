@@ -3,6 +3,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Navbar from '../components/Navbar';
 import Login from '../pages/Login';
 import News from '../pages/News';
+import PrivateRouter from './PrivateRouter';
 
 const AppRouter = () => {
   return (
@@ -10,8 +11,10 @@ const AppRouter = () => {
     <BrowserRouter>
     <Navbar/>
     <Routes>
+    <Route  path="/" element={<PrivateRouter/>} >
       <Route path="/" element={<News/>}/>
-      <Route path='/login' element={<Login/>}     />
+      </Route>
+      <Route path='/login' element={<Login/>} />
     </Routes>
     </BrowserRouter>
   )

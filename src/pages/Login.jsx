@@ -7,12 +7,17 @@ import { useNavigate } from 'react-router-dom';
 const Login = () => {
 
   let {email,password}= useSelector((state)=>state.orderSlice)
+  
+  const navigate = useNavigate()
  
   const dispatch = useDispatch ()
+
   const handleSubmit = (e)=> {
     e.preventDefault()
 
-dispatch(createUser(email,password))
+    dispatch(createUser(email,password))
+
+    navigate("/")
   }
 
 
